@@ -1,20 +1,23 @@
 <?php 
 
-// PHP class 
-class Person { 
+// Example class
+class Person 
+{ 
   
   // Class properties
   public $name; 
   public $age; 
    
   // Add contructor to class (php magic method)
-  public function __contruct($name, $age) { 
+  public function __contruct($name, $age) 
+  { 
     $this->name = $name; 
     $this->age = $age; 
   } 
   
   // Class method (function)
-  public function sentence() { 
+  public function sentence() 
+  { 
       return $this->name . ' is ' . $this->age . ' years old'; 
   } 
 
