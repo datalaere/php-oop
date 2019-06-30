@@ -28,9 +28,14 @@ class Collection implements Countable, JsonSerializable {
     return $this->get($value);
   }
   
-  // Magic method
+  // Magic method. "__callStatic" is bassically the same for static methods
   public function __call($func, $args) {
-    return $func;
+    return $func . ' has been called with arguments' . implode(', ', $args);
+  }
+  
+  // Magic method
+  public function __toString() {
+    return $this->jsonSerialize();
   }
    
   public function add($value) {
@@ -79,8 +84,8 @@ echo $c->get('john');
 // This with "__get" magic method will also work
 echo $c->john
   
- // __call():  
+ // __call(): Will try to call function if not defined
+ echo $c->hello('world');
   
-  
-  
-  
+ // __toString(): Will return an output of the class if defined
+echo $c;
