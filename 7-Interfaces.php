@@ -7,26 +7,33 @@
 // Class example implementing an interface (default PHP interface)
 // A class that implements an interface have to either be abstract or have all the methods of the implementing interfaces
 
-class Collection implements Countable, JsonSerializable {
+class Collection implements 
+  Countable, 
+  JsonSerializable 
+{
 
   // Default properties
   protected $items = [];
   
-  public function add($value) {
+  public function add($value) 
+  {
     $this->items[] = $value;
   }
   
-  public function set($key, $value) {
+  public function set($key, $value) 
+  {
     $this->items[$key] = $value;
   }
   
   // interface method
-  public function jsonSerialize() {
+  public function jsonSerialize()
+  {
     return json_encode($this->items);
   }
   
   // interface method
-  public function count() {
+  public function count() 
+  {
     return count($this->items);
   }
   
@@ -45,7 +52,8 @@ echo $c->count();
 /* Custom interfaces */
 
 // Example of a custom interface. A good practice is to name it (and the file) as so: "Name"+"Interface"
-interface TalkInterface {
+interface TalkInterface 
+{
 
   public function talk();
 
@@ -53,18 +61,22 @@ interface TalkInterface {
 
 // Custom classes
 
-class Dog implements TalkInterface {
+class Dog implements TalkInterface 
+{
 
-  public function talk() {
+  public function talk() 
+  {
     return 'Woof';
   }
   
 }
 
 
-class Cat implements TalkInterface {
+class Cat implements TalkInterface 
+{
 
-  public function talk() {
+  public function talk() 
+  {
     return 'Miauw';
   }
 
