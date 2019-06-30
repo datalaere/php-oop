@@ -2,9 +2,9 @@
 
 /* Visibility scopes */
 
-// public
-// protected
-// private
+// public: any class can access
+// protected: only extending child classes can access
+// private: only the parent class can access
 
 
 // Default class
