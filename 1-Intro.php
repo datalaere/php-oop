@@ -1,6 +1,6 @@
 <?php 
 
-// Objects 
+// Objects in php
 $object = new stdClass; 
 $object->names = ['John', 'Billy', 'Susan', 'Max']; 
 
