@@ -4,57 +4,80 @@
 
 class Calculator 
 {
-  
   protected $result;
   protected $operation;
   
-  public function setOperation($operation)
+  public function setOperation(OperatorInterface $operation)
   {
     $this->operation = $operation;
   }
-
+  
+  public function calculate()
+  {
+    foreach(func_get_args() as $number) {
+      $this->result = $this->operation->run($number, $this->result);
+    }
+  }
+  
+  public function getResult()
+  {
+    return $this->result;
+  }
 }
 
 
 interface OperatorInterface 
 {
-
-}
-
-class Adder 
-{
-
+  public function run($number, $result);
 }
 
 
-class Subtractor 
+class Adder implements OperatorInterface
 {
-
+  public function run($number, $result) 
+  {
+    return $result + $number;
+  }
 }
 
 
-class Divider 
+class Subtractor implements OperatorInterface
 {
-
+  public function run($number, $result) 
+  {
+    return $result - $number;
+  }
 }
 
 
-class Multiplier 
+class Divider implements OperatorInterface
 {
+  public function run($number, $result) 
+  {
+    return $result / $number;
+  }
+}
 
+
+class Multiplier implements OperatorInterface
+{
+  public function run($number, $result) 
+  {
+    return $result * $number;
+  }
 }
 
 
 // Instantiate
-$c = new Calculator 
+$c = new Calculator; 
 
 // Addition
 $c->setOperation(new Adder);
-$c->calculate(20, 30); // 50
+$c->calculate(30, 30); // 60
 
 // Subtraction
 $c->setOperation(new Subtractor);
-$c->calculate(5); // 20
+$c->calculate(10); // 50
 
 // Division
 $c->setOperation(new Divider);
@@ -62,7 +85,8 @@ $c->calculate(2); // 25
 
 // Muliplication
 $c->setOperation(new Multiplier);
-$c->calculate(5); // 100!
+$c->calculate(4); // 100!
 
+// Should give "100"
 echo $c->getResult();
 
