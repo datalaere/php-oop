@@ -2,9 +2,9 @@
 
 /* Visibility scopes */
 
-// public: any class can access
-// protected: only extending child classes can access
-// private: only the parent class can access
+// public: scope to make that property/method available from anywhere, other classes and instances of the object.
+// private: scope when you want your property/method to be visible in its own class only.
+// protected: scope when you want to make your property/method visible in all classes that extend current class including the parent class.
 
 
 // Default class
