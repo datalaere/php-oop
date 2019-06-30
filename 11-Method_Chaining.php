@@ -2,16 +2,19 @@
 
 /* Method chaining is just a way of using multiple methods together */
 
-class Example {
+class Example 
+{
 
-  public function hello() {
+  public function hello() 
+  {
     echo 'Hello ';
     
     // This is the important for getting chaining to work
     return $this;
   }
   
-  public function world() {
+  public function world() 
+  {
     echo 'World1';
   }
 
