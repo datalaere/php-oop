@@ -2,18 +2,21 @@
 
 /* Theoretical example of class dependency injection */
 
-class Chest {
+class Chest 
+{
 
   protected $lock;
   protected $isClosed;
 
   // "Type-hinting" what class should be "expected upon injection" while the class contructs
-  public function __contruct(Lock $lock) {
+  public function __contruct(Lock $lock) 
+  {
     $this->lock = $lock;
   }
   
   // Optional function parameter
-  public function close($lock = true) {
+  public function close($lock = true) 
+  {
     if($lock === true) {
       $this->lock->lock();
     }
@@ -23,11 +26,13 @@ class Chest {
     echo "close";
   }
   
-  public function isClosed() {
+  public function isClosed() 
+  {
     return $this->isClosed;
   }
   
-  public function open() {
+  public function open() 
+  {
     if( $this->lock->isLocked() ) {
       $this->lock->unLock();
     }
@@ -40,19 +45,23 @@ class Chest {
 }
 
 
-class Lock {
+class Lock 
+{
   
   protected $isLocked;
   
-  public function lock() {
+  public function lock() 
+  {
     $this->isLocked = true;
   }
   
-  public function unLock() {
+  public function unLock() 
+  {
     $this->isLocked = false;
   }
   
-  public function isLocked() {
+  public function isLocked() 
+  {
     return $this->isLocked;
   }
   
@@ -67,13 +76,15 @@ $chest->open();
 
 /* Real life example of dependency injection */
 
-class Database {
+class Database 
+{
 
   // A static property of the class
   protected static $instance;
 
   // We create a new static instance of the class itself
-  public static function getInstance() {
+  public static function getInstance() 
+  {
     if(!static::$instance) {
       static::$instance = new self;
     }
@@ -81,7 +92,8 @@ class Database {
     return static::$instance;
   }
   
-  public function query($sql) {
+  public function query($sql) 
+  {
     // PDO database driver
     $this->pdo->prepare($sql)->execute();
   }
@@ -89,22 +101,26 @@ class Database {
 }
 
 
-class User {
+class User 
+{
 
   protected $db;
 
   // "Type-hinting" what class should be "expected upon injection" while the class contructs
-  public function __contruct(Database $db) {
+  public function __contruct(Database $db) 
+  {
     $this->db = $db;
   }
   
-  // Good dependency injection
-  public function create(array $data) {
+  // GOOD dependency injection
+  public function create(array $data) 
+  {
     $this->db->query('INSERT INTO `users` ...');
   }
 
-  // Bad dependency injection becuase of "tight coupling", which makes it harder to chance in future
-  public function create(array $data) {
+  // BAD dependency injection becuase of "tight coupling", which makes it harder to chance in future
+  public function create(array $data) 
+  {
     $db = Database::getInstance();
     $db->query('INSERT INTO `users` ...');
   }
