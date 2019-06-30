@@ -2,9 +2,13 @@
 
 /* Abstract classes are almost like interfaces in design, but are more like a combination of both classes and interfaces. */
 
-abstract class Foo {
+// Example
 
-  public function bar() {
+abstract class Foo 
+{
+
+  public function bar() 
+  {
     return 'foobar';
   }
   
@@ -19,13 +23,16 @@ $foo = new Foo();
 echo $foo->bar();
 
 
-class Bar extends Foo {
+class Bar extends Foo 
+{
 
-  public function hello() {
+  public function hello() 
+  {
     return 'Hello World!';
   }
   
-  public function foobar() {
+  public function foobar() 
+  {
     return 'Foobar!';
   }
   
