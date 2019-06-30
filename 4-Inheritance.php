@@ -1,5 +1,6 @@
 <?php 
 
+// Default class
 class Bird { 
    
   public $canFly; 
@@ -42,7 +43,8 @@ echo $pigeon->getLegCount();
 // Will be true
 echo $pigeon->getCanFly();
 
-// Class Penguin inherients the Bird class and all its content by "extending" it
+
+// Class Penguin inherients the Bird class too and all its content by "extending" it
 class Penguin extends Bird { 
 
 }
