@@ -9,6 +9,9 @@ The most popular are: */
 // __call($funName, $arguments): The "__call()" method will be called when an undefined or inaccessible method is called.
 // __toString(): The "__toString()" method will be called when using echo method to print an object directly.
 
+// Find more here with simple examples: https://www.tutorialdocs.com/article/16-php-magic-methods.html
+
+
 // Example
 
 class Collection implements Countable, JsonSerializable {
