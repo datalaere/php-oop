@@ -86,7 +86,7 @@ $user = new User();
 
 // Run in your terminal (CMD on Windows, Linux or Mac terminal)
 composer self-update // only when Composer has not been used in a while
-composer dump-autoload -o // Composer will generate optimized autoload files (fastest autoloading) which will create the folder "vendor" if it does not exist.
+composer dump-autoload -o // Composer will generate optimized ("-o") autoload files (fastest autoloading) which will create the folder "vendor" if it does not exist.
 
 // After installation, you can use Composers autoload file in your project
 require_once _DIR_ . '/vendor/autoload.php';
