@@ -1,6 +1,7 @@
 <?php 
 
 /* Visibility scopes */
+
 // public
 // protected
 // private
