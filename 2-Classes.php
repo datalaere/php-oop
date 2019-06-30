@@ -1,6 +1,7 @@
 <?php 
 
 // PHP class 
+// Normally only ONE class per file, giving the file the same name as the class.
 class Person { 
 
   // Class properties
@@ -14,7 +15,7 @@ class Person {
 
 } 
 
-// Instantiate class 
+// Instantiate class outside the class file after requiring it 
 $person = new Person(); 
 $person->name = 'John'; 
 $person->age = 20; 
