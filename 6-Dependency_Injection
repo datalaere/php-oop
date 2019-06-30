@@ -1,10 +1,70 @@
 <?php
 
-Chest {
+/* Theoretical example of class dependency injection */
 
+class Chest {
+
+  protected $lock;
+  protected $isClosed;
+
+  // "Type-hinting" what class should be "expected upon injection" while the class contructs
+  public function __contruct(Lock $lock) {
+    $this->lock = $lock;
+  }
+  
+  // Optional function parameter
+  public function close($lock = true) {
+    if($lock === true) {
+      $this->lock->lock();
+    }
+    
+    $this->isClosed = true;
+    
+    echo "close";
+  }
+  
+  public function isClosed() {
+    return $this->isClosed;
+  }
+  
+  public function open() {
+    if( $this->lock->isLocked() ) {
+      $this->lock->unLock();
+    }
+    
+    $this->isClosed = false;
+    
+    echo "open";
+  }
+  
 }
 
 
-Lock {
-
+class Lock {
+  
+  protected $isLocked;
+  
+  public function lock() {
+    $this->isLocked = true;
+  }
+  
+  public function unLock() {
+    $this->isLocked = false;
+  }
+  
+  public function isLocked() {
+    return $this->isLocked;
+  }
+  
 }
+
+// Dependency injection, by "giving" a specific class to an other class that requires it to run 
+$chest = new Chest(new Lock);
+$chest->close();
+$chest->open();
+
+
+/* Real life example of dependency injection */
+
+
+
