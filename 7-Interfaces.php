@@ -30,7 +30,6 @@ class Collection implements Countable, JsonSerializable {
     return count($this->items);
   }
   
-
 }
 
 
