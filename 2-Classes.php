@@ -3,9 +3,11 @@
 // PHP class 
 class Person { 
 
+  // Class properties
   public $name; 
   public $age; 
    
+  // Class method (function)
   public function sentence() { 
       return $this->name . ' is ' . $this->age . ' years old'; 
   } 
