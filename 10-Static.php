@@ -2,15 +2,18 @@
 
 /* Static is a simple concept BUT most be used with care, as it can easily lead to bad code practice. */
 
-class Example {
+class Example 
+{
   
   public static $var = 'foobar';
 
-  public static function hello() {
+  public static function hello() 
+  {
     return 'Hello World!';
   }
   
-   public static function foobar() {
+  public static function foobar() 
+  {
     return $this->var;
   }
 
