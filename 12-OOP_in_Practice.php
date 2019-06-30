@@ -2,31 +2,45 @@
 
 /* This is an example of everything we have learne and how to use OOP in practice. Here we will try making an calculator. */
 
-class Calculator {
+class Calculator 
+{
+  
+  protected $result;
+  protected $operation;
+  
+  public function setOperation($operation)
+  {
+    $this->operation = $operation;
+  }
 
 }
 
 
-interface OperatorInterface {
+interface OperatorInterface 
+{
 
 }
 
-class Adder {
-
-}
-
-
-class Subtractor {
+class Adder 
+{
 
 }
 
 
-class Divider {
+class Subtractor 
+{
 
 }
 
 
-class Multiplier {
+class Divider 
+{
+
+}
+
+
+class Multiplier 
+{
 
 }
 
