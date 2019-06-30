@@ -1,21 +1,25 @@
 <?php 
 
 // Default class
-class Bird { 
+class Bird 
+{ 
    
   public $canFly; 
   public $legCount 
      
-  public function __construct($canFly, $legCount) { 
+  public function __construct($canFly, $legCount) 
+  { 
       $this->canFly = $canFly; 
     $this->legCount = $legCount; 
   } 
    
-  public function getCanFly() { 
+  public function getCanFly() 
+  { 
       return $this->canFly; 
   } 
    
-  public function getLegCount() { 
+  public function getLegCount() 
+  { 
       return $this->legCount; 
   } 
 
@@ -31,7 +35,8 @@ echo $bird->getCanFly();
 
 
 // Class Pigeon inherients the Bird class and all its content by "extending" it
-class Pigeon extends Bird { 
+class Pigeon extends Bird 
+{ 
 
 }
 
@@ -45,7 +50,8 @@ echo $pigeon->getCanFly();
 
 
 // Class Penguin inherients the Bird class too and all its content by "extending" it
-class Penguin extends Bird { 
+class Penguin extends Bird 
+{ 
 
 }
 
