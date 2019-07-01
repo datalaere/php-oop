@@ -1,6 +1,6 @@
 # Object Oriented Programming in PHP
 How to get started with OOP in PHP.
-Inspiration from https://www.youtube.com/watch?v=ipp4WPDwwvk&list=PLfdtiltiRHWF0RicJb20da8nECQ1jFvla&index=1
+Inspiration from Codecourse.
 
 ## Links
 http://code.tutsplus.com/tutorials/object-oriented-php-for-beginners--net-12762
